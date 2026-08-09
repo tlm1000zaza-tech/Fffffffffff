@@ -1,0 +1,54 @@
+<!-- ================= MODAL DIALOG ================= -->
+<div id="featureModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 sm:p-6 bg-slate-900/50 backdrop-blur-sm transition-opacity duration-300">
+  <div id="modalBox" class="bg-white rounded-[32px] max-w-2xl w-full max-h-[88vh] flex flex-col shadow-2xl relative transform transition-all scale-95 duration-300 overflow-hidden">
+    
+    <!-- Modal Header -->
+    <div class="p-6 sm:p-8 pb-4 flex items-start justify-between border-b border-slate-100/80 relative">
+      <div class="flex items-center gap-4">
+        <div id="modalIconContainer" class="w-14 h-14 rounded-2xl flex items-center justify-center shrink-0">
+          <!-- Icon injected via JS -->
+        </div>
+        <div class="flex flex-col items-start gap-1">
+          <span id="modalBadge" class="inline-block px-3 py-1 rounded-full text-[11px] font-bold tracking-wide uppercase"></span>
+          <h3 id="modalTitle" class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight"></h3>
+        </div>
+      </div>
+      <!-- ปุ่มปิด (X) มุมขวาบน -->
+      <button onclick="closeFeatureModal()" class="text-slate-400 hover:text-slate-600 w-8 h-8 flex items-center justify-center rounded-full hover:bg-slate-100 transition-colors shrink-0">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"></path></svg>
+      </button>
+    </div>
+
+    <!-- Modal Body ( Scrollbar แบบบางเรียบหรู ) -->
+    <div class="p-6 sm:p-8 overflow-y-auto space-y-6 text-slate-600 leading-relaxed custom-scrollbar max-h-[60vh]">
+      <p id="modalDescription" class="text-base sm:text-lg text-slate-700 font-medium"></p>
+      <div id="modalBodyCustom" class="space-y-6"></div>
+    </div>
+
+    <!-- Modal Footer (เหลือเฉพาะปุ่ม Close ตามตัวอย่าง) -->
+    <div class="px-6 py-4 sm:px-8 sm:py-5 bg-slate-50/60 border-t border-slate-100 flex items-center justify-between shrink-0">
+      <span class="text-xs sm:text-sm text-slate-400 font-medium">24/7 Concierge Support Available</span>
+      <button onclick="closeFeatureModal()" class="px-7 py-2.5 bg-slate-200/80 hover:bg-slate-300/80 text-slate-700 rounded-2xl text-sm font-semibold transition-all duration-200 active:scale-95">
+        Close
+      </button>
+    </div>
+
+  </div>
+</div>
+
+<!-- Custom Scrollbar Style -->
+<style>
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #CBD5E1;
+    border-radius: 9999px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #94A3B8;
+  }
+</style>
